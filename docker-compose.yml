@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:15.7-alpine
+    container_name: greenlight-db
+    environment:
+      - POSTGRES_USER=greenlight
+      - POSTGRES_PASSWORD=greenlight
+      - POSTGRES_DB=greenlight
+    ports:
+      - 5432:5432
