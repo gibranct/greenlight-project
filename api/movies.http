@@ -4,7 +4,7 @@ Host: localhost:4000
 
 ####
 
-GET http://localhost:4000/v1/movies/44 HTTP/1.1
+GET http://localhost:4000/v1/movies/3 HTTP/1.1
 Host: localhost:4000
 Content-Type: application/json
 
@@ -15,8 +15,26 @@ Host: localhost:4000
 Content-Type: application/json
 
 {
-    "title": "Moana",
-    "year": 2016,
-    "runtime": 107,
-    "genres": ["animation", "adventure"]
+    "title": "The Breakfast club",
+    "year": 1986,
+    "runtime": "96 mins",
+    "genres": ["drama"]
 }
+###
+
+PUT http://localhost:4000/v1/movies/4 HTTP/1.1
+Host: localhost:4000
+Content-Type: application/json
+
+{
+    "title": "The Breakfast club updated",
+    "year": 1996,
+    "runtime": "86 mins",
+    "genres": ["drama", "action"]
+}
+
+###
+
+DELETE http://localhost:4000/v1/movies/4 HTTP/1.1
+Host: localhost:4000
+Content-Type: application/json

@@ -10,6 +10,7 @@ import (
 	"os"
 	"time"
 
+	"github.com.br/gibranct/greenlight/internal/data"
 	_ "github.com/lib/pq"
 )
 
@@ -29,6 +30,7 @@ type config struct {
 type application struct {
 	config config
 	logger *slog.Logger
+	models data.Models
 }
 
 func main() {
@@ -53,13 +55,14 @@ func main() {
 		os.Exit(1)
 	}
 
-	db.Close()
+	defer db.Close()
 
 	logger.Info("database connection pool stablished")
 
 	app := &application{
 		config: cfg,
 		logger: logger,
+		models: data.NewModels(db),
 	}
 
 	srv := &http.Server{
