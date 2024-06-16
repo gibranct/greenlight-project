@@ -27,7 +27,7 @@ Host: localhost:4000
 Content-Type: application/json
 
 {
-    "title": "The Breakfast club updated",
+    "title": "The Breakfast club",
     "year": 1996,
     "runtime": "86 mins",
     "genres": ["drama", "action"]
@@ -36,5 +36,10 @@ Content-Type: application/json
 ###
 
 DELETE http://localhost:4000/v1/movies/4 HTTP/1.1
+Host: localhost:4000
+Content-Type: application/json
+
+###
+GET http://localhost:4000/v1/movies?sort=title HTTP/1.1
 Host: localhost:4000
 Content-Type: application/json
