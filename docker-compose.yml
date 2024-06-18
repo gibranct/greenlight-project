@@ -9,4 +9,4 @@ services:
       - POSTGRES_PASSWORD=greenlight
       - POSTGRES_DB=greenlight
     ports:
-      - 5432:5432
+      - 5435:5432
