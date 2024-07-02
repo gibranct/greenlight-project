@@ -4,7 +4,7 @@ Host: localhost:4000
 
 ####
 
-GET http://localhost:4000/v1/movies/3 HTTP/1.1
+GET http://localhost:4000/v1/movies/1 HTTP/1.1
 Host: localhost:4000
 Content-Type: application/json
 
@@ -52,5 +52,15 @@ Content-Type: application/json
 {
     "name": "Alice Smith",
     "email": "ALICE@example.com",
+    "password": "pa55word"
+}
+
+####
+POST http://localhost:4000/v1/tokens/authentication HTTP/1.1
+Host: localhost:4000
+Content-Type: application/json
+
+{
+    "email": "alice@example.com",
     "password": "pa55word"
 }
