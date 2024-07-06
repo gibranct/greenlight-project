@@ -2,7 +2,6 @@ package main
 
 import (
 	"net/http"
-	"time"
 )
 
 func (app *application) healthCheckHandler(w http.ResponseWriter, r *http.Request) {
@@ -13,8 +12,6 @@ func (app *application) healthCheckHandler(w http.ResponseWriter, r *http.Reques
 			"version":     version,
 		},
 	}
-
-	time.Sleep(4 * time.Second)
 
 	err := app.writeJson(w, http.StatusOK, data, nil)
 
